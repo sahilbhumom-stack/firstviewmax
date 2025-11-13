@@ -1,44 +1,35 @@
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when a link is clicked
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+// Toggle mobile menu & theme + small UI helpers
+document.addEventListener('DOMContentLoaded', function(){
+  // mobile menu
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.site-nav');
+  if(burger){
+    burger.addEventListener('click', ()=> {
+      if(nav.style.display === 'flex') nav.style.display = '';
+      else nav.style.display = 'flex';
     });
-});
+  }
 
-// Form Submission
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    if (name && email && message) {
-        alert(`Thank you, ${name}! We'll get back to you at ${email} soon.`);
-        contactForm.reset();
-    }
-});
+  // Theme toggle (dark/light)
+  const tgl = document.getElementById('themeToggle');
+  const body = document.body;
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark'){ body.classList.add('dark'); if(tgl) tgl.textContent = '☀️'; }
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+  if(tgl){
+    tgl.addEventListener('click', ()=>{
+      if(body.classList.contains('dark')){ body.classList.remove('dark'); tgl.textContent = '🌙'; localStorage.setItem('theme','light'); }
+      else{ body.classList.add('dark'); tgl.textContent = '☀️'; localStorage.setItem('theme','dark'); }
     });
+  }
+
+  // Smooth scroll for nav anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      if(window.innerWidth < 900 && nav) nav.style.display = ''; // close mobile menu
+    });
+  });
 });
