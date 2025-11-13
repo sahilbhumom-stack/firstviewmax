@@ -11,84 +11,389 @@
   --radius:12px;
 }
 
-/* Dark mode variables (will toggle via JS) */
-body.dark{ --bg:#071423; --card:#0b1722; --text:#e6f7ff; --muted:#9fb2bf; --glass: rgba(255,255,255,0.04); }
+/* Dark mode variables */
+body.dark{
+  --bg:#071423;
+  --card:#0b1722;
+  --text:#e6f7ff;
+  --muted:#9fb2bf;
+  --glass: rgba(255,255,255,0.04);
+}
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.container{max-width:1100px;margin:0 auto;padding:20px}
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
+}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:120;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 6px 20px rgba(7,27,45,0.08)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-.brand{display:flex;gap:12px;align-items:center}
-.logo-small{width:48px;height:48px;object-fit:contain;background:#fff;padding:6px;border-radius:8px}
-.brand-text .hospital-name{font-weight:700;letter-spacing:0.4px}
-.brand-text .tagline{font-size:12px;opacity:0.95}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:120;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(7,27,45,0.08);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+}
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo-small{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  background:#fff;
+  padding:6px;
+  border-radius:8px;
+}
+
+.brand-text .hospital-name{
+  font-weight:700;
+  letter-spacing:0.4px;
+}
+
+.brand-text .tagline{
+  font-size:12px;
+  opacity:0.95;
+}
 
 /* Nav */
-.site-nav{display:flex;gap:12px;align-items:center}
-.site-nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
-.burger{display:none;background:transparent;border:none;color:#fff;font-size:20px;padding:8px}
+.site-nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.site-nav a{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:8px;
+}
+
+.burger{
+  display:none;
+  background:transparent;
+  border:none;
+  color:#fff;
+  font-size:20px;
+  padding:8px;
+}
 
 /* Hero */
-.hero{padding:36px 0}
-.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center}
-.logo-hero{width:120px;margin-bottom:8px}
-.hero h1{font-size:28px;margin:6px 0}
-.lead{color:var(--muted);margin:10px 0;line-height:1.5}
-.hero-ctas{display:flex;gap:12px;margin-top:12px}
-.btn-primary{background:var(--accent-2);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(11,143,109,0.15)}
-.btn-outline{border:2px solid rgba(0,0,0,0.06);padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--text);background:transparent}
-.hero-badges{display:flex;gap:8px;margin-top:14px}
-.badge{padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-.emergency{background:linear-gradient(90deg,var(--danger),#ff8a73);color:#fff}
-.opd{background:#E6F7FF;color:var(--accent)}
-.pathology{background:#F0FFF4;color:var(--accent-2)}
+.hero{
+  padding:36px 0;
+}
 
-/* hero card */
-.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));padding:14px;border-radius:12px;box-shadow:0 18px 40px rgba(7,27,45,0.06);display:flex;flex-direction:column;align-items:center}
-.hero-card img{width:100%;border-radius:10px}
-.hero-card-info{padding-top:10px;text-align:center}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:24px;
+  align-items:center;
+}
+
+.logo-hero{
+  width:120px;
+  margin-bottom:8px;
+}
+
+.hero h1{
+  font-size:28px;
+  margin:6px 0;
+}
+
+.lead{
+  color:var(--muted);
+  margin:10px 0;
+  line-height:1.5;
+}
+
+.hero-ctas{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.btn-primary{
+  background:var(--accent-2);
+  color:#fff;
+  padding:12px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(11,143,109,0.15);
+}
+
+.btn-outline{
+  border:2px solid rgba(0,0,0,0.06);
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--text);
+  background:transparent;
+}
+
+.hero-badges{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+}
+
+.badge{
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:12px;
+}
+
+.emergency{
+  background:linear-gradient(90deg,var(--danger),#ff8a73);
+  color:#fff;
+}
+
+.opd{
+  background:#E6F7FF;
+  color:var(--accent);
+}
+
+.pathology{
+  background:#F0FFF4;
+  color:var(--accent-2);
+}
+
+/* Hero Card */
+.hero-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 18px 40px rgba(7,27,45,0.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.hero-card-info{
+  padding-top:10px;
+  text-align:center;
+}
 
 /* Section panels */
-.section{padding:26px 0}
-.panel-glass{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(7,27,45,0.04)}
-.section-title{font-size:20px;margin-bottom:6px}
-.section-sub{color:var(--muted);margin-bottom:16px}
+.section{
+  padding:26px 0;
+}
 
-/* services grid */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.service-card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 24px rgba(7,27,45,0.04);text-align:left;display:flex;gap:12px;align-items:flex-start}
-.icon-wrap{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, #fff, #f7fbff)}
+.panel-glass{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(7,27,45,0.04);
+}
 
-/* doctors */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.doctor-card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 28px rgba(7,27,45,0.04);text-align:center}
-.doctor-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
-.muted{color:var(--muted)}
+.section-title{
+  font-size:20px;
+  margin-bottom:6px;
+}
 
-/* contact layout */
-.contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:14px;align-items:start}
-.contact-left{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 10px 28px rgba(7,27,45,0.04)}
-.contact-right iframe{width:100%;height:260px;border:0;border-radius:10px}
+.section-sub{
+  color:var(--muted);
+  margin-bottom:16px;
+}
 
-/* footer */
-.site-footer{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:18px;margin-top:18px;border-radius:10px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+/* Services grid */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
 
-/* floating whatsapp */
-.whatsapp-float{position:fixed;right:16px;bottom:16px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 12px 30px rgba(0,0,0,0.18);text-decoration:none}
+.service-card{
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(7,27,45,0.04);
+  text-align:left;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
 
-/* small utilities */
+.icon-wrap{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, #fff, #f7fbff);
+}
+
+/* Doctors */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+}
+
+.doctor-card{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(7,27,45,0.04);
+  text-align:center;
+}
+
+.doctor-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+/* Contact layout */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:14px;
+  align-items:start;
+}
+
+.contact-left{
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 10px 28px rgba(7,27,45,0.04);
+}
+
+.contact-right iframe{
+  width:100%;
+  height:260px;
+  border:0;
+  border-radius:10px;
+}
+
+/* Footer */
+.site-footer{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#fff;
+  padding:18px;
+  margin-top:18px;
+  border-radius:10px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  background:#25D366;
+  color:#fff;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+  text-decoration:none;
+}
+
+/* Utilities */
 .hidden{display:none}
 .center{text-align:center}
 
-/* responsive */
+/* Responsive */
 @media (max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .contact-wrap{grid-template-columns:1fr}
-  .site-nav{display:none}
-  .burger{display:block}
-  .header-inner{padding:10px}
+
+  .hero-inner{
+    grid-template-columns:1fr
+  }
+
+  .contact-wrap{
+    grid-template-columns:1fr
+  }
+
+  .site-nav{
+    display:none;
+  }
+
+  .burger{
+    display:block;
+  }
+
+  .header-inner{
+    padding:10px;
+  }
+
+  /* Mobile Navigation Menu */
+  .site-nav.open{
+    display:flex !important;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:15px;
+    width:220px;
+    background:var(--card);
+    padding:20px;
+    gap:10px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    animation:slideIn 0.3s ease forwards;
+    z-index:999;
+  }
+}
+
+/* Animation */
+@keyframes slideIn{
+  from{
+    transform:translateX(30px);
+    opacity:0;
+  }
+  to{
+    transform:translateX(0);
+    opacity:1;
+  }
 }
