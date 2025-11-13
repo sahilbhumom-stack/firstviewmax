@@ -1,35 +1,51 @@
-// Toggle mobile menu & theme + small UI helpers
-document.addEventListener('DOMContentLoaded', function(){
-  // mobile menu
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.site-nav');
-  if(burger){
-    burger.addEventListener('click', ()=> {
-      if(nav.style.display === 'flex') nav.style.display = '';
-      else nav.style.display = 'flex';
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".site-nav");
+
+  // Mobile menu open/close
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("open");
     });
   }
 
-  // Theme toggle (dark/light)
-  const tgl = document.getElementById('themeToggle');
-  const body = document.body;
-  const saved = localStorage.getItem('theme');
-  if(saved === 'dark'){ body.classList.add('dark'); if(tgl) tgl.textContent = '☀️'; }
-
-  if(tgl){
-    tgl.addEventListener('click', ()=>{
-      if(body.classList.contains('dark')){ body.classList.remove('dark'); tgl.textContent = '🌙'; localStorage.setItem('theme','light'); }
-      else{ body.classList.add('dark'); tgl.textContent = '☀️'; localStorage.setItem('theme','dark'); }
-    });
-  }
-
-  // Smooth scroll for nav anchors
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-      if(window.innerWidth < 900 && nav) nav.style.display = ''; // close mobile menu
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (window.innerWidth < 900 && nav) {
+        nav.classList.remove("open");
+      }
     });
   });
+
+  // Theme toggle (dark/light)
+  const themeToggle = document.getElementById("themeToggle");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Load saved theme
+  if (savedTheme === "dark") {
+    body.classList.add("dark");
+    if (themeToggle) themeToggle.textContent = "☀️";
+  }
+
+  // Toggle theme mode
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeToggle.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  }
 });
