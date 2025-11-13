@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Max Hospital - Care, Innovation, Community</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo on the left -->
+                <div class="logo">
+                    <img src="assets/the_max_hospital_logo_transparent.png" alt="The Max Hospital Logo" class="logo-img">
+                </div>
+                
+                <!-- Mobile menu toggle -->
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#mission" class="nav-link">Our Mission</a></li>
+                    <li><a href="#doctors" class="nav-link">Our Doctors</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to The Max Hospital</h1>
+                <p class="hero-subtitle">Your health is our priority. Exceptional care, every day.</p>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="section mission-section">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-content">
+                <div class="mission-card">
+                    <div class="mission-icon care"></div>
+                    <h3>Care</h3>
+                    <p>We provide compassionate, patient-centered care with cutting-edge medical expertise and state-of-the-art facilities.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon innovation"></div>
+                    <h3>Innovation</h3>
+                    <p>Embracing the latest medical technologies and research to ensure our patients receive the best possible treatments.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon community"></div>
+                    <h3>Community</h3>
+                    <p>Building strong relationships with our community through health awareness programs and accessible healthcare services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="section doctors-section">
+        <div class="container">
+            <h2 class="section-title">Our Doctors</h2>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300?text=Dr.+Sharma" alt="Dr. Sharma" class="doctor-img">
+                    <h3>Dr. Amit Sharma</h3>
+                    <p class="specialty">Cardiologist</p>
+                    <p class="bio">15+ years of experience in cardiac care</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300?text=Dr.+Patel" alt="Dr. Patel" class="doctor-img">
+                    <h3>Dr. Priya Patel</h3>
+                    <p class="specialty">Neurologist</p>
+                    <p class="bio">12+ years specializing in neurological disorders</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300?text=Dr.+Verma" alt="Dr. Verma" class="doctor-img">
+                    <h3>Dr. Rajesh Verma</h3>
+                    <p class="specialty">Orthopedic Surgeon</p>
+                    <p class="bio">18+ years in orthopedic surgery</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://via.placeholder.com/300x300?text=Dr.+Gupta" alt="Dr. Gupta" class="doctor-img">
+                    <h3>Dr. Neha Gupta</h3>
+                    <p class="specialty">Pediatrician</p>
+                    <p class="bio">10+ years caring for children's health</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Phone:</strong> +91 9876 543 210</p>
+                    <p><strong>Email:</strong> info@maxhospital.com</p>
+                    <p><strong>Address:</strong> 123 Medical Street, Healthcare City, India</p>
+                    <a href="https://wa.me/919876543210?text=Hello%20Max%20Hospital%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" class="btn btn-whatsapp">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Max Hospital. All rights reserved. | Care | Innovation | Community</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
